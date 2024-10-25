@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Button</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        height: 80px;
+        width: 80px;
+        font-weight: bold;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #fff;
+        background: linear-gradient(-45deg, #ff5959, #ff0d6e);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="click">Dark</button>
+    </div>
+  </body>
+  <script>
+    var btn = document.querySelector("#click");
+    const container = document.querySelector(".container");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (btn.innerText == "Dark") {
+        container.style.backgroundColor = "black";
+        btn.innerText = "Light";
+      } else {
+        container.style.backgroundColor = "white";
+        btn.innerText = "Dark";
+      }
+    });
+  </script>
+</html>
